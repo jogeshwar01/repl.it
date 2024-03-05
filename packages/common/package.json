@@ -1,0 +1,9 @@
+{
+  "name": "common",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "typescript": "^5.3.3"
+  }
+}

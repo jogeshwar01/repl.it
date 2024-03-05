@@ -10,6 +10,7 @@ This Turborepo includes the following packages/apps:
 
 -   `web`: a [React.js](https://react.dev/) frontend
 -   `api`: an [Express/Node](https://expressjs.com/) backend
+-   `@repo/base-code`: base code for all supported languages. stored in s3
 -   `@repo/ui`: a stub React component library used in `web`
 -   `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 -   `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
