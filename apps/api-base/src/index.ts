@@ -1,4 +1,7 @@
 import express from "express";
+import { add } from "@repo/common";
+
+console.log(add(1, 2));
 
 const app = express();
 

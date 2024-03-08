@@ -24,3 +24,10 @@ This Turborepo has some additional tools already setup for you:
 -   [TypeScript](https://www.typescriptlang.org/) for static type checking
 -   [ESLint](https://eslint.org/) for code linting
 -   [Prettier](https://prettier.io) for code formatting
+
+#### Install new node app
+
+1. Run `yarn init` and `tsc --init`
+2. Add internal package to dependencies like `"common": "*"`
+3. Change `rootDir` to `./src` and `outDir` to `./dist`
+4. Update `moduleResolution` and `module` in `tsconfig.json` to `nodenext` and `NodeNext` respectively
