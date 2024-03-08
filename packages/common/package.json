@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "aws-sdk": "^2.1573.0",
     "typescript": "^5.3.3"
   }
 }

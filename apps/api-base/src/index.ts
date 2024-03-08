@@ -1,14 +1,29 @@
 import express from "express";
-import { add } from "@repo/common";
-
-console.log(add(1, 2));
+import dotenv from "dotenv"
+import cors from "cors";
+dotenv.config()
+import { copyS3Folder } from "@repo/common";
 
 const app = express();
+app.use(express.json());
+app.use(cors())
 
-app.get("/", (req, res) => {
-    res.send("Base API Server");
+app.post("/project", async (req, res) => {
+    // Hit a database to ensure this slug isn't taken already
+    const { replId, language } = req.body;
+
+    if (!replId) {
+        res.status(400).send("Bad request");
+        return;
+    }
+
+    await copyS3Folder(`base/${language}`, `code/${replId}`);
+
+    res.send("Project created");
 });
 
-app.listen(4000, () => {
-    console.log("Base API Server is running on port 4000");
+const port = process.env.PORT || 5000;
+
+app.listen(port, () => {
+    console.log(`listening on *:${port}`);
 });
